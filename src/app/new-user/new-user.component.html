@@ -1,1 +1,55 @@
-<p>new-user works!</p>
+<div class="create-page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Create User</li>
+      </ol>
+    </nav>
+    <div class="page-content">
+      <div class="row">
+        <div class="col col-md-4">
+          <img class="img-avatar" src="{{avatarLink}}">
+          <button mat-stroked-button class="change-img-button" color="primary" (click)="openDialog()">Change Image</button>
+        </div>
+  
+        <div class="col col-md-8">
+  
+         
+  
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Name" class="form-control" [(ngModel)]="name">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validation_messages.name">
+             
+              </ng-container>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Surname" class="form-control" [(ngModel)]="surname">
+              </mat-form-field>
+              <!-- <ng-container *ngFor="let validation of validation_messages.surname">
+             
+              </ng-container> -->
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput type="number" min="0" max="100" placeholder="Age" class="form-control" [(ngModel)]="age">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validation_messages.age">
+          
+              </ng-container>
+            </div>
+  
+            <div class="row submit-button-container">
+              <div class="col-md-4">
+                <button mat-raised-button class="submit-button" color="primary" type="submit" (click)="onSubmit()" >Create</button>
+              </div>
+            </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
